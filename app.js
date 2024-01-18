@@ -12,6 +12,7 @@ todoList.addEventListener('click', function(e){
             e.target.classList.remove('completed');
         } else {
             e.target.classList.add('completed')
+            todoList.appendChild(e.target);
         }
     }
 })
@@ -25,7 +26,7 @@ form.addEventListener('submit', function(e){
 
     newTask.innerText = input.value + " ";
     newTask.appendChild(removeBtn);
-    todoList.appendChild(newTask);
+    todoList.prepend(newTask);
     input.value = '';
 
 })
