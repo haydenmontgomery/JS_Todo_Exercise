@@ -10,6 +10,20 @@ todoList.addEventListener('click', function(e){
     } else if (e.target.tagName === 'LI'){
         if (e.target.classList.contains('completed')){
             e.target.classList.remove('completed');
+            const items = todoList.children;
+            let itemsArr = [].slice.call(items);
+
+            //Sorting function. Put the unstruck task above strikethrough tasks.
+            itemsArr.sort(function(a,b) {
+                return a.classList.contains('completed') == b.classList.contains('completed')
+                ? 0
+                : (a.classList.contains('completed') ? 1: -1);
+            })
+
+            //Put list in the order
+            for (let i = 0; i < itemsArr.length; i++) {
+                todoList.appendChild(itemsArr[i]);
+            }
         } else {
             e.target.classList.add('completed')
             todoList.appendChild(e.target);
