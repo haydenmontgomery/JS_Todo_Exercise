@@ -1,4 +1,5 @@
 .completed {
-    color: purple;
+    color: darkmagenta;
     text-decoration: line-through;
+    font-weight: bolder;
 }
