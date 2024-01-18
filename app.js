@@ -20,6 +20,11 @@ todoList.addEventListener('click', function(e){
 //Form Listener. Creates both task and button. Then, puts it into the task list.
 form.addEventListener('submit', function(e){
     e.preventDefault();
+    if(input.value === ""){
+
+    }else {
+
+    
     const newTask = document.createElement('li');
     const removeBtn = document.createElement('button');
     removeBtn.innerText = 'Remove';
@@ -28,5 +33,5 @@ form.addEventListener('submit', function(e){
     newTask.appendChild(removeBtn);
     todoList.prepend(newTask);
     input.value = '';
-
+    }
 })
